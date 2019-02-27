@@ -29,7 +29,8 @@ body {
 }
 
 #heading {
-  background: #C70039;
+  /* background: #C70039; */
+  background: #ff5656;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,35 +39,48 @@ body {
 }
 
 #heading h1 {
-  color: white;
+  color: #edf2f6;
+  font-family: Montserrat, sans-serif;
   font-weight:600;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 2rem;
-  
-  
 }
 
 .navbar {
   font-size: 1rem;;
-  background: #C70039;
+  background: #ff5656;
   padding-bottom: 10px;
   height: 47px;
 }
 
-#navbar-menu {
+.nav-overlay {
+  position: fixed;
+  top:47px;
+  height:auto;
+  width:100%;
+  background-image: linear-gradient(#ff5656, #fa4949) ;
+  overflow:auto;
+  display: none;
+  border-bottom: 3px solid #6a7efc;
+}
+
+.nav-menu {
   list-style-type: none;
   display: none;
 }
 
 .nav-links,
 .logo {
+  color: rgba(237, 242, 246, 0.8);
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
 }
 
-#navbar-menu li {
+.nav-menu li {
   text-align: center;
-  margin: 15px auto;
+  margin: 15px 15px;
+  
+  
 }
 
 .logo {
@@ -81,7 +95,7 @@ body {
   top: 10px;
   right: 20px;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(237, 242, 246, 0.9);
   font-size: 24px;
 }
 
@@ -90,73 +104,84 @@ body {
 }
 
 button {
-  /* display: inline-block; */
-  background-color: #a8c256;
+  background-color: #6a7efc;
   padding: 1rem 2rem;
-  font-size: 1rem;
-  appearance: none;
-  box-shadow: none;
-  border: 3px solid #fff;
+  border: 3px solid #edf2f6;
   border-radius: 10px;
-  color: #FFF;
+  color: #edf2f6;
   font-family: Montserrat, sans-serif;
+  font-size: 1rem;
   font-weight: 700;
-  
 }
+
 button:focus {
   outline: none
 }
 
 #cta-header-button {
-  margin: 1rem 2rem 2rem 2rem;
+  margin: 1rem 2rem 3rem 2rem;
 }
 
 .fa-arrow-down {
-  color: white;
+  color: #edf2f6;
   font-size: 3rem;
 }
 
 .fa-arrow-down g g path {
-  stroke: white;
+  stroke: #edf2f6;
   stroke-width: 10;
 }
+
+#about-section {
+  /* height:  */
+}
+
 
 
 @media screen and (min-width: 768px) {
   .navbar {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-      height: 70px;
-      align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
   }
 
-  #navbar-menu {
-      display: flex;
-      margin-right: 30px;
-      flex-direction: row;
-      justify-content: flex-end;
+  .nav-menu {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
-  #navbar-menu li {
-      margin: 0;
+  .nav-menu li {
+    margin: 0;    
   }
 
   .nav-links {
-      margin-left: 40px;
+    margin-left: 40px;    
+  }
+
+  .nav-overlay {
+    position:relative;
+    display: inline-block;
+    background-image: none;
+    border-bottom: none; 
+  top: 0;
+ 
   }
 
   .logo {
-      margin-top: 0;
+    margin-top: 0;
   }
 
   #navbar-hamburger {
-      display: none;
+    display: none;
   }
 
   .logo:hover,
   .nav-links:hover {
-      color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
   }
 
   #heading {
