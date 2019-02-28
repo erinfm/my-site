@@ -26,11 +26,14 @@ time, mark, audio, video {
 
 body {
   font-family: Montserrat, sans-serif;
+  line-height: 1.6;
+  background-image: linear-gradient(to bottom right, #834d9b, #d04ed6);
+  
 }
 
 #heading {
   /* background: #C70039; */
-  background: #ff5656;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,40 +41,68 @@ body {
   height: calc(100vh - 47px);
 }
 
-#heading h1 {
-  color: #edf2f6;
+h1 {
   font-family: Montserrat, sans-serif;
   font-weight:600;
   font-size: 2rem;
+  line-height: 1.3;
   margin: 2rem;
+  text-align: center;
+}
+
+#heading h1 {
+  color: #fff;
+}
+
+h2 {
+  font-family: Montserrat, sans-serif;
+  font-weight:600;
+  font-size: 2rem;
+  line-height: 1.3;
+  margin: 0 2rem 2rem 2rem;
+  text-align: center;
+}
+
+h3 {
+  color: #f2edf3;
+  font-family: Montserrat, sans-serif;
+  font-weight:600;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin: 0 2rem 2rem 2rem;
+  text-align: center;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
 }
 
 .navbar {
-  font-size: 1rem;;
-  background: #ff5656;
+  font-size: 1rem;
   padding-bottom: 10px;
   height: 47px;
 }
 
 .nav-overlay {
-  position: fixed;
+  position: absolute;
   top:47px;
   height:auto;
   width:100%;
-  background-image: linear-gradient(#ff5656, #fa4949) ;
+  /* background-image: linear-gradient(#834d9b, #d04ed6) ; */
   overflow:auto;
   display: none;
-  border-bottom: 3px solid #6a7efc;
+  border-bottom: 3px solid rgba(242, 237, 243, 0.9);
 }
 
 .nav-menu {
   list-style-type: none;
   display: none;
+  margin-bottom: 25px;
 }
 
 .nav-links,
 .logo {
-  color: rgba(237, 242, 246, 0.8);
+  color: rgba(242, 237, 243, 0.9);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -79,8 +110,6 @@ body {
 .nav-menu li {
   text-align: center;
   margin: 15px 15px;
-  
-  
 }
 
 .logo {
@@ -95,8 +124,15 @@ body {
   top: 10px;
   right: 20px;
   cursor: pointer;
-  color: rgba(237, 242, 246, 0.9);
+  color: rgba(242, 237, 243, 0.9);
   font-size: 24px;
+}
+
+.logo:hover,
+.nav-links:hover,
+#navbar-hamburger:hover {
+  color: rgba(255, 255, 255, 1);
+  transition: color 100ms ease;
 }
 
 .active {
@@ -104,41 +140,91 @@ body {
 }
 
 button {
-  background-color: #6a7efc;
+  background-color: transparent;
+  border: 3px solid #fff;
+  color: #fff;
+  cursor: pointer;
   padding: 1rem 2rem;
-  border: 3px solid #edf2f6;
+  
   border-radius: 10px;
-  color: #edf2f6;
+  
   font-family: Montserrat, sans-serif;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
-button:focus {
-  outline: none
+button:hover, button:focus {
+  outline: none;
+  background: #fff;
+  border: 3px solid #fff;
+  color: #834d9b;
+  transition: background-color 200ms ease,
+  border 200ms ease,
+  color 200ms ease;
+
 }
 
 #cta-header-button {
   margin: 1rem 2rem 3rem 2rem;
 }
 
-.fa-arrow-down {
-  color: #edf2f6;
-  font-size: 3rem;
-}
-
-.fa-arrow-down g g path {
-  stroke: #edf2f6;
-  stroke-width: 10;
+section {
+  padding: 4rem 1.25rem 4rem 1.25rem;
+  margin: 10px;
 }
 
 #about-section {
-  /* height:  */
+  background: #f2edf3;
+}
+
+#about-section h2, #about-section p {
+  color: #444;
+}
+
+#work-section {
+  background: #3b3a3b;
+  
+}
+
+#work-section h2, #work-section p {
+  color: #f2edf3;
+}
+
+.work-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.work-item {
+  margin: 1.5rem 0;
+  
+}
+
+.work-item-img-cont {
+  padding: 2rem 0 2rem 0;
+}
+
+.work-item-img {
+  width: 100%;
+}
+
+.work-item-text {
+  padding: 0;
+}
+
+#contact-section {
+  background: #f2edf3;
+}
+
+#contact-section h2, #contact-section p {
+  color: #444;
 }
 
 
+/* Media Queries */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -149,6 +235,7 @@ button:focus {
 
   .nav-menu {
     display: flex;
+    margin-bottom: 0;
     margin-right: 30px;
     flex-direction: row;
     justify-content: flex-end;
@@ -175,19 +262,48 @@ button:focus {
     margin-top: 0;
   }
 
-  #navbar-hamburger {
-    display: none;
+  section {
+    padding: 5rem 3rem 5rem 3rem;
+    margin: 30px;
   }
 
-  .logo:hover,
-  .nav-links:hover {
-    color: rgba(255, 255, 255, 1);
+  #navbar-hamburger {
+    display: none;
   }
 
   #heading {
     height: calc(100vh - 70px);
   }
-}
 
+  h1 {
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3{
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 1.25rem 2.5rem;
+    
+    border-radius: 20px;
+    
+    font-size: 1.25rem;
+  }
+
+  .work-item {
+    max-width: 380px;
+  }
+
+  .work-item-text {
+    padding: 0 1rem;
+  }
+}
+ 
 
 
