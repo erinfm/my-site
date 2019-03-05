@@ -28,8 +28,10 @@ body {
   font-family: Montserrat, sans-serif;
   line-height: 1.6;
   background-image: linear-gradient(to bottom right, rgb(130, 101, 185) 30%, rgb(192, 221, 233));
-  
 }
+
+::-moz-selection { background: rgb(192, 221, 233); }
+::selection { background: rgb(192, 221, 233); }
 
 #heading {
   /* background: #C70039; */
@@ -156,7 +158,7 @@ button:hover, button:focus {
   outline: none;
   background: #fff;
   border: 3px solid #fff;
-  color: #834d9b;
+  color: rgb(130, 101, 185);
   transition: background-color 200ms ease,
   border 200ms ease,
   color 200ms ease;
@@ -170,6 +172,7 @@ button:hover, button:focus {
 section {
   padding: 4rem 1.25rem 4rem 1.25rem;
   margin: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
 }
 
 #about-section, #work-section {
@@ -191,13 +194,14 @@ section {
 
 .work-items {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
 .work-item {
   margin: 1.5rem 0;
-  
+  flex: 1 1 auto;
+  max-width: 380px;
 }
 
 .work-item-img-cont {
@@ -206,6 +210,7 @@ section {
 
 .work-item-img {
   width: 100%;
+  border: 3px solid #ddd;
 }
 
 .work-item-text {
@@ -295,9 +300,7 @@ section {
     font-size: 1.25rem;
   }
 
-  .work-item {
-    max-width: 380px;
-  }
+  
 
   .work-item-text {
     padding: 0 1rem;
